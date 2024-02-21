@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.parallax {
+  overflow: hidden;
+  height: 1200vh;
+}
+
+.images {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Adjust the minimum width */
+  grid-gap: 20px; /* Adjust the gap between images */
+}
+
+.image-para {
+  cursor: pointer;
+  position: absolute;
+  max-width: 400px; /* Maximum width */
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.image-para:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  width: auto;
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal-content {
+    width: 100%;
+  }
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-para {
+    position: absolute;
+    margin: 60px;
+    max-width: calc(40%);
+  }
+
+
+}
+
+/* Læs mere audio  */
+.audio-container{
+  margin-top: 2vw;
+  text-align: left;
+}
+.audio-container h4{
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 2vw;
+}
+.audio-container p{
+  font-family: Arvo;
+  font-size: 0.7rem;
+  margin-top: -2vw;
+}
+audio{
+  margin: -1rem;
+}

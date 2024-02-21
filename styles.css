@@ -1,0 +1,1933 @@
+body,
+html {
+  margin: 0;
+  /* overflow-x: hidden; */
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*Tekst på sitet*/
+h1 {
+  font-family: Arvo;
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 1vw;
+  margin-top: 5%;
+}
+
+h2 {
+  font-family: Arvo;
+  font-size: 3rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: Arvo;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* tekst med width på 1075px under eller over bredebilleder */
+h5 {
+  font-family: Inter;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+}
+
+p {
+  font-family: Inter;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 40px;
+}
+
+a {
+  text-transform: none;
+  text-decoration: none;
+  color: #000;
+}
+
+.vertikalbilleder {
+  width: 70% !important;
+
+}
+
+.billboard {
+
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  top: 10%;
+}
+
+/* Header */
+header {
+  height: fit-content;
+  background-color: white;
+}
+
+.headlogo {
+  z-index: 10;
+  top: 0;
+  margin-left: 7vw;
+}
+
+/**************** nav *************/
+/* Define initial state of the navigation (hidden) */
+.hidden-sidebar {
+  display: none;
+}
+
+
+.color-frontpage #sidebar {
+  background-color: #697c44;
+}
+
+.color-frontpage span {
+  background-color: #ffffff;
+}
+
+.color-frontpage {
+  z-index: 10;
+  position: absolute;
+}
+
+.color-frontpage div {
+  z-index: 10;
+  position: absolute;
+}
+
+#sidebar {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  right: -300px;
+  transition: .4s;
+  z-index: 10;
+  /* Add a higher z-index to make the text overlay above the menu */
+
+}
+
+#sidebar ul li {
+  list-style: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 10px;
+  margin-bottom: 1.2rem;
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  top: 30px;
+  right: 330px;
+  z-index: 5;
+  cursor: pointer;
+
+}
+
+.toggle-btn span {
+  width: 45px;
+  height: 4px;
+  background: #90CA5F;
+  display: block;
+  margin-top: 4px;
+  z-index: 5;
+}
+
+#sidebar.active {
+  z-index: 5;
+
+  right: 0;
+}
+
+
+
+/* --------Links style------ */
+.link-style {
+  background-image: linear-gradient(to right,
+      #ffffff,
+      #ffffff 50%,
+      #000000 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: x-large
+}
+
+.link-style:before {
+  content: '';
+  background: #FF9058;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.link-style:hover {
+  background-position: 0;
+}
+
+.link-style:hover::before {
+  width: 100%;
+}
+
+
+/* nav logo image */
+#logo-image {
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 auto;
+
+}
+
+#logo-image img {
+  display: block;
+  width: 13rem;
+  height: 100%;
+
+}
+
+hr {
+
+  border: px1 solid black;
+}
+
+
+
+.welcome-text {
+  overflow-wrap: break-word;
+  font-family: 'Arvo', serif;
+
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
+}
+
+.bold-title {
+  text-align: center;
+  font-family: 'Arvo', serif;
+  font-weight: bold;
+
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+
+.description {
+  font-family: 'Inter', sans-serif;
+  font-size: 3vh;
+  line-height: 2.5em;
+  text-align: center;
+  margin: 0 10%;
+  margin-bottom: 30px;
+
+}
+
+
+/* card flipping section */
+.image-section {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.image-card {
+  width: calc(25% - 20px);
+  /* Adjust the width of each image card */
+  padding-bottom: 2em;
+  margin-bottom: 4em;
+  perspective: 1000px;
+}
+
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-back {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+
+}
+
+.flip-card-front {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front img,
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 20px; */
+  box-sizing: border-box;
+}
+
+.flip-card-back h3,
+.flip-card-back p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Initially hide elements with the "fade-in" class */
+.fade-in {
+  opacity: 0;
+  transform: translateY(-50px);
+  /* Initially move the elements down by a smaller distance */
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* class to fly in the elements when they come into view */
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+  /* Move elements to their original position */
+}
+
+
+
+
+/* contact section in front page */
+.contact-section {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+
+
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-left {}
+
+.contact-left h3 {
+  overflow-wrap: break-word;
+  font-family: Arvo;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+
+.contact-left img {
+  max-width: 20%;
+  /* Adjust the size of the icon */
+  display: block;
+  margin-bottom: 5%;
+  padding-left: 2vw;
+}
+
+.contact-right {
+  margin: 0;
+  /* width: 100%; */
+  overflow-wrap: break-word;
+}
+
+.contact-details p {
+  overflow-wrap: break-word;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+
+
+/* Tilbage knap på læs mere siderne */
+.tilbage {
+  display: flex;
+  justify-content: left;
+  font-size: 4vw;
+  padding-left: 5vw;
+}
+
+.tilbage a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Informations sectioner*/
+/* Info om os med billede til venstre og tekst til højre */
+#infoomos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Billede del */
+#billedeomos {
+  width: 55%;
+  margin: 7%;
+}
+
+#infobilledeomos {
+  width: 45vw;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+/* Tekst del */
+#tekstomos {
+  width: 45%;
+  margin-right: 7%;
+}
+
+/* Pop-up messages */
+/* Style the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  /* Higher z-index to ensure it appears on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.425);
+  /* Semi-transparent black overlay */
+}
+
+/* Style the modal content */
+.modal-content {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  background-color: #303030e3;
+  margin: 15% auto;
+  /* padding: 1%; */
+  border: 1px solid #888;
+  width: 50%;
+}
+
+/* Style the close button */
+.close {
+  color: #ffffff;
+  /* float: right; */
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content img {
+  width: 30%;
+}
+
+.modal-content h2 {
+  color: white;
+}
+
+.modal-content p {
+  color: white;
+}
+
+
+/* Info med tekst overskrift under eller over bredt billede */
+.infotop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.holdertilp {
+  width: 100%;
+}
+
+.infotop h5{
+  font-family: Inter;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+}
+.infotop p {
+  width: 70vw;
+  margin: auto;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  text-align: center;
+}
+
+.ikonmidt {
+  margin-top: 5vw;
+  margin-bottom: -2vw;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+/* Info "et" med tekst til venstre og billede til højre */
+.infoet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5vw;
+  margin-top: 5vw;
+}
+
+.tekstet {
+  width: 45%;
+  margin-left: 7%;
+}
+
+/* fun facts */
+.tekstet_ {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(234, 211, 149, 1);
+  width: 50%;
+  height: 20%;
+  margin: 5%;
+  text-align: left;
+  border-radius: 10px;
+}
+
+
+.tekstet_ ul {
+  line-height: 2em;
+
+
+
+}
+
+.billedeet {
+  width: 55%;
+  margin-right: 7%;
+  margin-left: 8%;
+}
+
+.billedeet img {
+  width: 100%;
+}
+
+
+.infobilledeet {
+  border-radius: 10px;
+}
+
+/* Info "to" med tekst til højre og billede til venstre */
+.infoto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5vw;
+  margin-top: 5vw;
+}
+
+.tekstto {
+  width: 45%;
+  margin-right: 7%;
+}
+
+.billedeto {
+  width: 55%;
+  margin-right: 8%;
+  margin-left: 7%;
+}
+
+.billedeto img {
+  width: 100%;
+
+}
+
+.infobilledeto {
+  border-radius: 10px;
+}
+
+/* Information med kort */
+.trekort {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  width: 100%;
+}
+
+.kort {
+  justify-content: space-around;
+  background-color: #8EA95D;
+  width: 30%;
+  /* height: 25vw; */
+  text-align: center;
+}
+
+.kort p {
+  width: 20vw;
+}
+
+.kort h2 {
+  font-size: 2em;
+}
+
+#firenulfire .læsom {
+  width: 30vw;
+}
+
+#firenulfire .infoet {
+  margin-top: -4vw;
+}
+
+#firenulfire h2 {
+  margin-top: 3vw;
+}
+
+/*Lokal menu*/
+.lokalmenu {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(234, 211, 149, 1);
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+.lokalmenu a {
+  text-decoration: none;
+  color: black;
+
+}
+
+.lokalmenu h4 {
+  margin: -0.4em 0 0 0;
+  /* font-size: medium; */
+}
+
+.ikontekst {
+  /* height: 100%; */
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ikon {
+  /* margin-top: -1em; */
+  width: 50%;
+}
+
+
+/* Kun på plantesiden, da den lokalemenu består af mange titler */
+#lokalmenuplanter {
+  display: flex;
+  height: 100%;
+  /* padding-bottom: 1%; */
+  /* width: 100%; */
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(234, 211, 149, 1);
+  padding: 2%;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
+#lokalmenuplanter hr {
+  rotate: 90;
+  border: solid 0.05em black;
+  height: 5em;
+}
+
+#lokalmenuplanter a {
+  text-decoration: none;
+  color: black;
+}
+
+#lokalmenuplanter h4 {
+  /* display: flex; */
+  margin: -0.3em 0 0 0;
+  margin-bottom: -0.7em;
+  font-size: x-large;
+}
+
+#lokalmenuplanter .ikon {
+  margin-top: -1em;
+}
+
+/*Tidslinje*/
+#historie {
+  width: 100%;
+  height: 625vw;
+}
+
+.History {
+  z-index: 2;
+}
+
+#startcirkel {
+  background-color: rgba(142, 169, 93, 1);
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgba(142, 169, 93, 1);
+  border-width: 3px;
+
+  position: relative;
+  top: -47vw;
+  left: 44.3vw;
+  z-index: 2;
+}
+
+#slutcirkel {
+  background-color: rgba(142, 169, 93, 1);
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgba(142, 169, 93, 1);
+  border-width: 3px;
+
+  position: relative;
+  top: -1095vw;
+  left: 44.3vw;
+  z-index: 2;
+}
+
+#streg {
+  background-color: rgba(142, 169, 93, 1);
+  width: 2vw;
+  height: 600vw;
+  border-style: solid;
+  border-color: rgba(142, 169, 93, 1);
+  border-width: 3px;
+  position: relative;
+  top: -50vw;
+  left: 48.3vw;
+  z-index: 2;
+}
+
+/* Aarti tekst bokse */
+.common-styling {
+  background-color: rgba(142, 169, 93, 1);
+  border: solid rgba(142, 169, 93, 1);
+  border-radius: 30px;
+  color: white;
+  margin-bottom: 3%;
+  transition-duration: 350ms;
+  padding: 1.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  margin-top: 3%;
+  font-family: Arvo;
+  font-size: 3vw;
+  text-align: center;
+  width: 7%;
+  text-transform: uppercase;
+  line-height: 30px;
+  position: relative;
+  left: 43.5vw;
+  z-index: 3;
+}
+
+
+
+/* sectioner i tidslinje */
+.box-styling {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  text-align: center;
+  line-height: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+/* tekst til kort */
+#historie p {
+  text-align: center;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* læs mere om knapper (CTA) til kort */
+.læsom {
+  background-color: rgba(212, 152, 36, 1);
+  border: solid rgba(212, 152, 36, 1);
+  border-radius: 30px;
+  line-height: 30px;
+  padding: 1.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  margin-top: 3%;
+  text-transform: uppercase;
+  color: black;
+  font-family: Arvo;
+  font-size: 1vw;
+  margin-bottom: 3%;
+  width: auto;
+  transition-duration: 350ms;
+  cursor: pointer;
+}
+
+.læsom:hover {
+  background-color: #8EA95D;
+  border: solid #8EA95D;
+}
+
+/* billeder til kort */
+.hisfoto {
+  width: 35vw;
+  border-radius: 10px;
+}
+
+
+/* -----------------------dyresiden------------------------------------- */
+
+/* dronevideo */
+
+.video-container {
+  width: 100%;
+  height: 80%;
+  /* Fylder hele skærmen lodret */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+
+
+.slide {
+
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+#section1 {
+  background-image: url('images/tinasbilledehest.avif');
+  z-index: 0;
+}
+#section2 {
+  background-image: url('images/billedetinageder.avif');
+}
+#section3 {
+  background-image: url('images/IMG_2491.avif');
+}
+
+#section4 {
+  background-image: url('images/IMG_2352.avif');
+}
+
+#section5 {
+  background-image: url('images/IMG_2309.avif');
+}
+
+
+
+#upper-nav {
+  display: none;
+}
+
+.navigation {
+  position: fixed;
+  top: 60%;
+  margin-top: -300px;
+  text-align: center;
+  z-index: 20;
+
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.model-name {
+
+  color: rgb(255, 255, 255);
+  font-family: poller one;
+  font-size: 5em;
+  text-align: center;
+
+}
+
+.year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  text-align: center;
+  margin: auto;
+  margin-top: 10%;
+}
+
+
+.describtion {
+  color: aliceblue;
+  font-family: inter;
+  font-size: 1.2em;
+  line-height: 2em;
+
+}
+
+.underoverskrifter {
+  font-weight: bold;
+  font-family: ARVO;
+}
+
+.navigation li {
+
+  color: rgb(255, 255, 255);
+  display: block;
+  padding: 0 10px;
+  font-family: Arvo;
+  line-height: 9.5vh;
+  font-weight: 900;
+  text-align: center;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 1em !important;
+
+}
+
+.infotilskudsfodring {
+  width: 86%;
+  margin: auto;
+}
+
+#kontroldyresiden {
+  margin-top: 10vw;
+}
+
+
+.læsmere {
+  background-color: rgba(212, 152, 36, 1);
+  border: solid rgba(212, 152, 36, 1);
+  border-radius: 30px;
+  line-height: 2.5em;
+  padding: 1.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  margin-top: 10%;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 90%;
+  cursor: pointer;
+  /* margin-bottom: 3%; */
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.læsmere:hover {
+  background-color: #8EA95D;
+  border: solid #8EA95D;
+}
+
+
+.navigation a {
+  text-decoration: none;
+}
+
+
+
+/*Hover*/
+.navigation li.light-menu {
+  border-bottom: 0.1em solid #ffffff;
+  margin: auto;
+
+}
+
+.navigation li.light-menu:hover {
+  border-bottom: 3px solid #ffffff;
+
+}
+
+
+/*----------------- inskter --------------------------*/
+
+
+#section6 {
+  background-image: url('images/dukatsommerfugl_hun-3.avif');
+  z-index: 0;
+
+}
+
+#section7 {
+  background-image: url('images/engkoellesvaermer.avif');
+}
+
+#section8 {
+  background-image: url('images/groen-koellesvaermer.avif');
+}
+
+#section9 {
+  background-image: url('images/mose-randoeje.avif');
+}
+
+#section10 {
+  background-image: url('images/perlemorsommerfugl_underside.avif');
+}
+
+
+
+
+/* ----------Test for shapes in front page -----------*/
+
+/* Sponsor side */
+/* Medejer skaber */
+.trekoloner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.medejerskab {
+  display: flex;
+  align-items: center;
+  width: 80vw;
+  background-color: rgba(221, 184, 84, 1);
+  border-radius: 2.5vw;
+  margin-bottom: 2vw;
+}
+
+.medejerskab:nth-child(2) {
+  background: rgba(201, 198, 190, 1);
+}
+
+.medejerskab:nth-child(3) {
+  background: rgba(237, 171, 124, 1);
+}
+
+.ikonpris {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5vw;
+  margin: auto;
+}
+
+.ikonpris img {
+  margin-bottom: -3em;
+  margin-top: 1em;
+}
+
+.fordele {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+.fordele h4 {
+  text-align: left;
+  margin: 0;
+}
+
+.fordele li {
+  line-height: 3vw;
+  font-family: Inter;
+}
+
+.læsfordele {
+  background-color: white;
+  border: solid white;
+  border-radius: 30px;
+  line-height: 1.5em;
+  padding: 1.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  text-transform: uppercase;
+  color: black;
+  font-family: Arvo;
+  font-size: 1vw;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.læsfordele:hover {
+  background-color: #8EA95D;
+  border: solid #8EA95D;
+}
+
+/* Mere info ved onclick */
+.hidden {
+  display: none;
+}
+
+/* Donation */
+#beloeb {
+  /* width: 50vw; */
+  height: 8vw;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 3vw;
+  margin-top: 0;
+  background-color: #8ea95d93;
+  font-family: Arvo;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* Store knapper der leder videre */
+.videre {
+  background-color: #8EA95D;
+  border: solid white;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: black;
+  font-family: Arvo;
+  font-weight: bold;
+  cursor: pointer;
+  width: 30vw;
+  transition-duration: 350ms;
+}
+
+.videre h4 {
+  font-size: x-large;
+}
+
+/* Medejer siden */
+/* Tre medejerskaber */
+.kortejer {
+  background-color: rgba(221, 184, 84, 1);
+  margin: 2vw;
+  width: 28vw;
+  height: auto;
+  text-align: center;
+}
+
+
+.kortejer h2 {
+  font-size: 2vw;
+  margin-top: 2vw;
+}
+
+
+.kortejer p {
+  width: 20vw;
+}
+
+.kortejer img {
+  margin-top: -1vw;
+  margin-bottom: 1vw;
+}
+
+.kortejer #mereInfo {
+  text-align: left;
+}
+
+.kortejer:nth-child(2) {
+  background: rgba(201, 198, 190, 1);
+}
+
+.kortejer:nth-child(3) {
+  background: rgba(237, 171, 124, 1);
+}
+
+.kortejer .læsfordele {
+  margin-bottom: 1vw;
+}
+
+/* Checkbox */
+.trekort input {
+  /*background-color: #8EA95D; Vil gerne have ændret farven på checkboxene samt stregen*/
+  margin: 2vw;
+  width: 2vw;
+  height: 2vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Respnosiv {
+  display: none !important;
+}
+
+#tokort {
+  margin-bottom: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#tokort .kort {
+  background-color: #EAD395;
+  border-radius: 10px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  background-color: #8EA95D;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -4px;
+
+}
+
+.timeline img {
+  width: 100%;
+  border-radius: 10px;
+
+}
+
+/* Container around content */
+.container {
+  box-sizing: border-box;
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #8EA95D;
+  border: 4px solid #8EA95D;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #8EA95D;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #8EA95D;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #8EA95D;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #8EA95D transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: #ffffff;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid rgb(116, 116, 116);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgb(34, 143, 92) transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+
+
+
+
+
+/* Apply styles to the container of the background shapes */
+.background-shapes {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  /* Ensures the shapes are evenly distributed */
+
+}
+
+.shape {
+  /* border-right: 2px solid #7ECC4D; */
+
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  /* Added transition for width */
+
+
+}
+
+.shape:hover {
+  width: calc(200% + 8px);
+  /* Expand the width of the hovered shape */
+}
+
+.shape:not(:hover) {
+  width: calc(60% - 8px);
+  /* Collapse the width of other shapes */
+
+}
+
+.shape:hover .circle-logo {
+  /* z-index: 200; */
+}
+
+.shape:hover .tooltip {
+  color: white;
+}
+
+
+
+
+
+
+.shape:hover::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #90CA5F;
+  font-size: 3.5vh;
+  font-weight: bold;
+  font-family: 'Arvo', serif;
+
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.circle-logo {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.circle-logo img {
+  max-width: 50vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Hide images by default */
+.image {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Display images on hover */
+.shape:hover .image {
+  opacity: 1;
+}
+
+.image-1,
+.image-2,
+.image-3,
+.image-4,
+.image-5,
+.image-6,
+.image-7 {
+  background-position: center;
+  /* background-attachment: fixed; */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.image-1 {
+
+
+  background-image: url('images/IMG_2433.avif');
+
+}
+
+.image-2 {
+  background-image: url('images/IMG_2124.avif');
+
+}
+
+.image-3 {
+  background-image: url('images/maj-goegeurt-1-2.avif');
+
+
+}
+
+.image-4 {
+  background-image: url('images/mose-randoeje.avif');
+}
+
+.image-5 {
+  background-image: url('images/bioblitz.avif');
+
+}
+
+.image-6 {
+  background-image: url('images/ged3tinabillede.avif');
+
+}
+
+.image-7 {
+  background-image: url('images/IMG_2097.avif');
+}
+
+
+
+/* ---------Footer-------- */
+/* Deko */
+.footerdeko {
+  margin-bottom: -1vw;
+  width: 100%;
+}
+
+.footer-holder {
+  background-color: #8EA95D;
+  display: flex;
+  width: 100%;
+  color: #ffffff;
+}
+
+.footer-1 {
+  width: 33%;
+  flex-wrap: wrap;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.footer-menu {
+  display: flex;
+
+  flex-direction: column;
+  margin: 2em;
+  font-family: inter;
+
+}
+
+.footer-menu a {
+  color: white;
+  line-height: 3vh;
+}
+
+
+.footer-social {
+  width: 100%;
+  margin: 1em;
+}
+
+.footer-social a {
+  color: white;
+  margin: 1em;
+  font-size: 2em;
+
+
+}
+
+.footer-2 {
+  height: 100%;
+  width: 33%;
+  text-align: center;
+  flex-direction: column;
+
+}
+
+.footer-info {}
+
+.footer-info h1 {
+  text-align: center;
+}
+
+.footer-info h3 {
+  justify-content: center;
+  /* display: flex; */
+  /* width: 20%; */
+  text-align: center;
+
+  word-wrap: break-word;
+
+}
+
+.footer-title {
+  text-align: center;
+  font-family: arvo;
+  font-size: 3vh;
+}
+
+.footer-3 .footer-details {
+  text-align: left;
+  font-family: inter;
+  margin: 5% 7% 2% 2%;
+  font-size: 2vh;
+  word-wrap: break-word;
+  text-align: right;
+
+
+}
+
+.footer-2 .footer-details {
+  margin: 10% 5%;
+  font-family: inter;
+
+  text-align: center;
+  font-size: 2vh;
+
+}
+
+
+
+.footer-sponsor img {
+  margin: 1em;
+  width: 100px;
+}
+
+.footer-3 {
+  width: 33%;
+}
+
+.footer-kontakt {
+  word-wrap: break-word;
+  font-size: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  .row {
+    flex-direction: column;
+  }
+
+  .shape {
+    display: none;
+  }
+
+  .background-shapes {
+    height: 40vh;
+
+  }
+
+
+  .flip-card-front img,
+  .flip-card-back {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0px;
+  }
+
+
+  .footer-holder {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-holder hr {
+    display: none;
+  }
+
+
+  .footer-1,
+  .footer-2,
+  .footer-3 {
+
+    text-align: center;
+    margin-bottom: 20px;
+    /* Add some space between footer sections */
+  }
+
+  .footer-menu {
+    margin: 1em;
+  }
+
+  .footer-social {
+    margin: 1em;
+  }
+
+  .footer-info {
+    margin-bottom: 1em;
+  }
+
+  .footer-info,
+  .footer-sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-sponsor img {
+    margin: 10px;
+    max-width: 80%;
+  }
+
+  .footer-kontakt,
+  .footer-oplysninger {
+    margin-bottom: 1em;
+  }
+
+  .footer-details {
+    margin: 0.5em 0;
+    font-size: 14px;
+  }
+
+  #infoomos {
+    flex-direction: column;
+  }
+
+  .headlogo {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2em;
+
+  }
+
+  h5 {
+    font-size: 100%;
+    /* margin: 0; */
+    width: 90%;
+
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .infoto,
+  .infoet {
+    flex-direction: column;
+  }
+
+  .tekstto,
+  .tekstet {
+    margin-left: 7%;
+
+    width: 85%;
+    margin-right: 7%;
+
+  }
+
+  .describtion {
+    font-size: 0.9rem;
+  }
+
+  .year {
+    width: 90%;
+    height: 100%;
+  }
+
+
+  #upper-nav,
+  .navigation {
+    display: none;
+  }
+
+  .trekort {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .kort {
+    margin-top: 10%;
+    width: 100%;
+    border-radius: 2.5vw;
+    flex-direction: column;
+    display: flex;
+
+  }
+
+
+
+  .kort p {
+    width: 90%;
+  }
+
+  .medejerskab {
+    flex-direction: column;
+  }
+
+  .fordele li {
+    line-height: normal;
+    padding: 5px;
+  }
+
+  .fordele h4 {
+    font-size: large;
+  }
+
+  .ikonpris h2 {
+    padding-top: 10%;
+  }
+
+  .læsfordele {
+    font-size: x-small;
+    width: 60%;
+  }
+
+  .videre h4 {
+    font-size: 1rem;
+  }
+
+  .videre {
+    line-height: normal;
+    padding: 0;
+    width: 70vw;
+
+  }
+
+  .Respnosiv {
+    display: block !important;
+  }
+
+  .not-Respnosiv {
+    display: none;
+  }
+
+  #tokort {
+    flex-direction: column;
+  }
+
+  .kortejer {
+    width: 100%;
+  }
+
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .contact-left,
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link-style {
+    padding: 0;
+    font-size: larger;
+  }
+
+  #sidebar .toggle-btn {
+    right: 320px;
+  }
+
+  .tekstet_ {
+    width: 90%;
+    height: 100%;
+  }
+
+  .tekstet_ ul {
+    display: block;
+  }
+
+  #lokalmenuplanter h4 {
+    display: none;
+  }
+
+  .lokalmenu h4 {
+    display: none;
+    /* font-size: medium; */
+
+  }
+
+  .læsom {
+    font-size: medium;
+    padding: 0;
+  }
+}
+
+
+
+  @media screen and (max-width: 768px) {
+    .image-card {
+      width: calc(100%);
+      /* Adjust the width of each image card for smaller screens */
+    }
+  }
+
+  /* Media query for even smaller screens or mobile devices */
+  @media screen and (max-width: 480px) {
+    .image-card {
+      width: calc(100%);
+      /* Adjust the width of each image card for mobile devices */
+    }
+  }
